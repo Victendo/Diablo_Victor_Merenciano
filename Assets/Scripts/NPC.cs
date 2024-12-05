@@ -6,6 +6,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     private Outline outline;
+    [SerializeField] private DialogaSO dialogo;
     [SerializeField] private float tiempoRotacion;
     
 
@@ -19,8 +20,7 @@ public class NPC : MonoBehaviour
 
     public void Interactuar(Transform interactuador)
     {
-        Debug.Log("Hola");
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y);
+        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDialogo.sistema.IniciarDialogo(dialogo));
     }
 
     private void OnMouseEnter()
