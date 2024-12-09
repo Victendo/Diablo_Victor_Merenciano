@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private NavMeshAgent agent;
     private Camera cam;
 
-    private NPC npcActual;
+    private Transform ultimoClick;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,19 +20,26 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movimiento();
-
-        if(npcActual)
+        if (Time.timeScale == 1)
         {
+            Movimiento();
+        }
+
+        if(ultimoClick && ultimoClick.TryGetComponent(out NPC npc))
+        {
+            agent.stoppingDistance = distanciaInteraccion;
 
         if(!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
-            npcActual.Interactuar(this.transform);
-            npcActual = null;
-            agent.isStopped = true;
-            agent.stoppingDistance = 0;
+            npc.Interactuar(this.transform);
+            ultimoClick = null;
         }
 
+        }
+
+        else if (ultimoClick)
+        {
+            agent.stoppingDistance = 0f;
         }
         
     }
@@ -44,14 +51,10 @@ public class Player : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (hit.transform.TryGetComponent(out NPC npc))
-                {
-
-                    npcActual = npc;
-                    agent.stoppingDistance = distanciaInteraccion;
-                }
-
                 agent.SetDestination(hit.point);
+                ultimoClick = hit.transform;
+
+                
             }
         }
     }

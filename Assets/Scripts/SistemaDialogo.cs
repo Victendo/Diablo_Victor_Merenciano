@@ -12,6 +12,8 @@ public class SistemaDialogo : MonoBehaviour
     private bool escribiendo;
     private int indiceFraseActual;
 
+    private DialogaSO dialogoActual;
+
 
     public static SistemaDialogo sistema;
 
@@ -30,22 +32,66 @@ public class SistemaDialogo : MonoBehaviour
 
     public void IniciarDialogo(DialogaSO dialogo)
     {
+        Time.timeScale = 0f;
+        dialogoActual = dialogo;
         marcoDialogo.SetActive(true);
+        StartCoroutine(EscribirFrase());
     }
 
-    private void EscribirFrase()
+    private IEnumerator EscribirFrase()
     {
-        
+        escribiendo = true;
+
+        textoDialogo.text = "";
+        char [] fraseEnLetras = dialogoActual.frases[indiceFraseActual].ToCharArray();
+        foreach(char letra in fraseEnLetras)
+        {
+            textoDialogo.text += letra; 
+            yield return new WaitForSecondsRealtime(dialogoActual.tiempoEntreLetras);
+        }
+
+        escribiendo = false;
     }
 
-    private void SiguienteFrase()
+    public void SiguienteFrase()
     {
+        if(escribiendo)
+        {
+            CompletarFrase();
+        }
+        else
+        {
+            indiceFraseActual++;
 
+            if(indiceFraseActual < dialogoActual.frases.Length)
+            {
+
+             StartCoroutine(EscribirFrase());
+
+            }
+
+            else
+            {
+                TerminarDialogo();
+            }
+        }
+    }
+
+    private void CompletarFrase()
+    {
+        StopAllCoroutines();
+        textoDialogo.text = dialogoActual.frases[indiceFraseActual];
+        escribiendo = false;
     }
 
     private void TerminarDialogo()
     {
         marcoDialogo.SetActive(false);
+        StopAllCoroutines();
+        indiceFraseActual = 0;
+        escribiendo = false;
+        dialogoActual = null;
+        Time.timeScale = 1f;
     }
 
 
