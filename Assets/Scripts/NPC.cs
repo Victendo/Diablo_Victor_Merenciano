@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
     private Outline outline;
     [SerializeField] private DialogaSO dialogo;
     [SerializeField] private float tiempoRotacion;
+    [SerializeField] private Transform cameraPoint;
     
 
     [SerializeField] private Texture2D cursorInteraccion;
@@ -20,7 +21,7 @@ public class NPC : MonoBehaviour
 
     public void Interactuar(Transform interactuador)
     {
-        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDialogo.sistema.IniciarDialogo(dialogo));
+        transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDialogo.sistema.IniciarDialogo(dialogo, cameraPoint));
     }
 
     private void OnMouseEnter()

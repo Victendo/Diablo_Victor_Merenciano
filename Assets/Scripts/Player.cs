@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class Player : MonoBehaviour
     private Camera cam;
 
     private Transform ultimoClick;
+
+    [SerializeField] private Vector3 NpcPosition;
+    [SerializeField] private float tiempoRotacion;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +35,8 @@ public class Player : MonoBehaviour
 
         if(!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
-            npc.Interactuar(this.transform);
-            ultimoClick = null;
+            LanzarInteraccion(npc);
+            
         }
 
         }
@@ -42,6 +46,12 @@ public class Player : MonoBehaviour
             agent.stoppingDistance = 0f;
         }
         
+    }
+
+    private void LanzarInteraccion(NPC npc)
+    {
+        npc.Interactuar(this.transform);
+        ultimoClick = null;
     }
 
     private void Movimiento()
