@@ -8,6 +8,7 @@ public class SistemaPatrulla : MonoBehaviour
     [SerializeField] private Enemigo main;
     [SerializeField] private Transform ruta;
     [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private float velocidadPatrulla;
 
     List<Vector3> listadoPuntos = new List<Vector3>();
     // Start is called before the first frame update
@@ -30,6 +31,13 @@ public class SistemaPatrulla : MonoBehaviour
     void Start()
     {
         
+        
+    }
+
+    private void OnEnable()
+    {
+        indiceRutaActual = -1;
+        agent.speed = velocidadPatrulla;
         StartCoroutine(PatrullarYEsperar());
     }
 
