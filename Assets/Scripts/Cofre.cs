@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cofre : MonoBehaviour
+public class Cofre : MonoBehaviour, IInteractuable
 {
     private Outline outline;
 
     [SerializeField] private Texture2D cursorInteraccion;
     [SerializeField] private Texture2D cursorPorDefecto;
+
+    public void Interactuar(Transform interactuador)
+    {
+       
+    }
+
+
     // Start is called before the first frame update
 
     private void Awake()

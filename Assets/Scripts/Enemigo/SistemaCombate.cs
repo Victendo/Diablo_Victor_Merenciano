@@ -8,6 +8,7 @@ public class SistemaCombate : MonoBehaviour
 {
     [SerializeField] private Enemigo main;
     [SerializeField] private float velocidadCombate;
+    [SerializeField] private float danhoAtaque;
     [SerializeField] private float distanciaAtaque;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Animator anim;
@@ -29,11 +30,6 @@ public class SistemaCombate : MonoBehaviour
         agent.stoppingDistance = distanciaAtaque;
     }
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -43,7 +39,7 @@ public class SistemaCombate : MonoBehaviour
 
             agent.SetDestination(main.MainTarget.position);
 
-            if(agent.remainingDistance <= distanciaAtaque)
+            if(!agent.pathPending && agent.remainingDistance <= distanciaAtaque)
             {
                anim.SetBool("attacking", true);
             }
@@ -57,7 +53,7 @@ public class SistemaCombate : MonoBehaviour
         
         
     }
-
+    
     private void EnfocarObjetivo()
     {
         Vector3 direccionATarget = (main.MainTarget.position - this.transform.position).normalized;
@@ -66,5 +62,19 @@ public class SistemaCombate : MonoBehaviour
         transform.rotation = rotacionATarget;
     }
 
-    
+
+    #region Ejecutados por eventos de animación.
+    private void Atacar()
+    {
+        main.MainTarget.GetComponent<Player>().HacerDanho(danhoAtaque);
+    }
+
+    private void FinAnimacionAtaque()
+    {
+        anim.SetBool("attacking", false);
+    }
+    #endregion
+
+
+
 }
