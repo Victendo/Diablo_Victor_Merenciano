@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float distanciaInteraccion;
+    [SerializeField] private float distanciaAtaque;
     private NavMeshAgent agent;
     private Camera cam;
 
@@ -15,6 +16,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Vector3 NpcPosition;
     [SerializeField] private float tiempoRotacion;
+
+    private PlayerAnimations playerAnimations;
+
+    public PlayerAnimations PlayerAnimations { get => playerAnimations; set => playerAnimations = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +43,11 @@ public class Player : MonoBehaviour
         if(!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             LanzarInteraccion(interactuable);
-            
         }
+
+        }
+        else if(ultimoClick && ultimoClick.TryGetComponent(out Enemigo enemigo))
+        {
 
         }
 
