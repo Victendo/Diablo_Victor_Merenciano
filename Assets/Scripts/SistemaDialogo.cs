@@ -9,6 +9,7 @@ public class SistemaDialogo : MonoBehaviour
     [SerializeField] private GameObject marcoDialogo;
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField] private Transform npcCamera;
+    [SerializeField] private EventManagerSO eventaSO;
 
     private bool escribiendo;
     private int indiceFraseActual;
@@ -93,8 +94,15 @@ public class SistemaDialogo : MonoBehaviour
         StopAllCoroutines();
         indiceFraseActual = 0;
         escribiendo = false;
-        dialogoActual = null;
         Time.timeScale = 1f;
+        if(dialogoActual.tieneMision)
+        {
+            eventaSO.NuevaMision();
+        }
+
+        dialogoActual = null;
+        
+
     }
 
 

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739d2bb72114e6c4aa08812551979553, type: 3}
+  m_Name: Dialogo1
+  m_EditorClassIdentifier: 
+  frases:
+  - Muy buenas senior, mi mujer parece que se encuentra con una diarrea espectacular,
+    me tiene las paredes...bueno, ni te cuento...
+  - Anda...hazme un favor y pillame unas setas de la muerte. No para matarla, claro...sino
+    para matar su diarrea, de verdad...no aguanto el olor...
+  - A que esperas?...VAMOS, VIRILLA!!!
+  tiempoEntreLetras: 0.02
+  tieneMision: 1
+  textoMision: Consigue las setas de la muerte (0/3)
