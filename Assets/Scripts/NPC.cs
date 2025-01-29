@@ -24,8 +24,11 @@ public class NPC : MonoBehaviour, IInteractuable
         transform.DOLookAt(interactuador.position, tiempoRotacion, AxisConstraint.Y).OnComplete(()=> SistemaDialogo.sistema.IniciarDialogo(dialogo, cameraPoint));
     }
 
+   
+
     private void OnMouseEnter()
     {
+        Cursor.SetCursor(cursorInteraccion, new Vector2(0, 0), CursorMode.Auto);
         outline.enabled = true;
     }
 
@@ -33,6 +36,7 @@ public class NPC : MonoBehaviour, IInteractuable
 
     private void OnMouseExit()
     {
+        Cursor.SetCursor(cursorPorDefecto, new Vector2(0, 0), CursorMode.Auto);
         outline.enabled = false;
     }
 }

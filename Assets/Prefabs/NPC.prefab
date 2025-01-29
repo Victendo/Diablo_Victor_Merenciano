@@ -751,6 +751,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo: {fileID: 11400000, guid: 2316b5ee58e3dbd40a51ae200642c3cf, type: 2}
   tiempoRotacion: 1
+  cameraPoint: {fileID: 0}
+  gM: {fileID: 11400000, guid: 76742d863b4c26f46888232d54eed811, type: 2}
   cursorInteraccion: {fileID: 2800000, guid: 42ec8a0e710138343a271d732299cfb6, type: 3}
   cursorPorDefecto: {fileID: 2800000, guid: 51cb6ee928f89b64691ef4dfd57c03e9, type: 3}
 --- !u!114 &4032819331752688435
