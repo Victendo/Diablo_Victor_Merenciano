@@ -90,14 +90,13 @@ public class SistemaDialogo : MonoBehaviour
 
     private void TerminarDialogo()
     {
-        marcoDialogo.SetActive(false);
-        StopAllCoroutines();
-        indiceFraseActual = 0;
-        escribiendo = false;
         Time.timeScale = 1f;
+        marcoDialogo.SetActive(false);
+        indiceFraseActual = 0;
+        
         if(dialogoActual.tieneMision)
         {
-            eventaSO.NuevaMision();
+            eventaSO.NuevaMision(dialogoActual.mision);
         }
 
         dialogoActual = null;
