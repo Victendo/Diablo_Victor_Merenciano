@@ -26,7 +26,7 @@ public class PlayerAnimations : MonoBehaviour
 
     public void EjecutarAtaque()
     {
-        anim.SetBool("attacking", true);
+            anim.SetBool("attacking", true);
     }
 
     public void PararAtaque()

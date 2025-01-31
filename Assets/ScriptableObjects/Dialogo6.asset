@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739d2bb72114e6c4aa08812551979553, type: 3}
+  m_Name: Dialogo6
+  m_EditorClassIdentifier: 
+  frases:
+  - Buenas joven soy Rosa pero la gente me llama la Sr.Melano, y la he cagado muuucho...no
+    como la esposa de Elver...
+  - Mira, creia haber recibido un correo de mi tio nigeriano, y me han acabado robando
+    la pasta. Le rastree el IP y mis monedas estan aqui
+  - Podrias recogerlas por mi? Estoy agotada de hackear cuentas...
+  tiempoEntreLetras: 0.02
+  tieneMision: 1
+  mision: {fileID: 11400000, guid: db84f0357db094b4b8d131592b665e44, type: 2}
