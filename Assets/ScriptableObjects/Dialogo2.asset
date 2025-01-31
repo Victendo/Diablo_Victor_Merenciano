@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Dialogo2
   m_EditorClassIdentifier: 
   frases:
-  - Che, me salvaste las paredes, vos sos un crack
-  - Toma 10 pesetas, se que no sirven ahora pero te jodes
+  - Madre de dios las tienes!! Eres un capo, habria ido yo pero estas tu que paso
+    por esas cosas caminantes. Han visto demasiado Tik Tok...
+  - En fin...toma 10 pesetas, se que no sirven ahora pero te jodes
   tiempoEntreLetras: 0.02
   tieneMision: 1
   mision: {fileID: 11400000, guid: c380e59fbf68dcc4385baefbcf161810, type: 2}

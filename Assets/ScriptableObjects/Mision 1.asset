@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dccc2061c6e72459a8b51244b4674d, type: 3}
   m_Name: Mision 1
   m_EditorClassIdentifier: 
-  ordenInicial: Escapa de la mazmorra
-  ordenFinal: Te pasaste el juego, vos sos un crackkk
+  ordenInicial: Recupera el movil de Skibidi
+  ordenFinal: Regresa con Skibidi
   repetir: 0
-  repeticionesTotales: 3
-  estadoActual: 0
+  repeticionesTotales: 1
   indiceMision: 1

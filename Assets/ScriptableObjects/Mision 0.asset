@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dccc2061c6e72459a8b51244b4674d, type: 3}
   m_Name: Mision 0
   m_EditorClassIdentifier: 
-  ordenInicial: Recoge tres setas de la muerte
+  ordenInicial: Recoge cinco setas de la muerte
   ordenFinal: Vuelve con Elver
   repetir: 1
-  repeticionesTotales: 3
-  estadoActual: 0
+  repeticionesTotales: 5
   indiceMision: 0
