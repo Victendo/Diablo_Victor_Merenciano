@@ -16,5 +16,5 @@ MonoBehaviour:
   - Creo...que me he perdido...
   - Bueno...WOPPA GANGAM STYLE!!!!
   tiempoEntreLetras: 0.02
-  tieneMision: 1
-  mision: {fileID: 11400000, guid: 542dca016af4ea94e85bed5407440a39, type: 2}
+  tieneMision: 0
+  mision: {fileID: 0}
