@@ -44,4 +44,9 @@ public class MenuInicial : MonoBehaviour
         menuInicio.SetActive(true);
         menuOpciones.SetActive(false);
     }
+
+    public void EntrarMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
